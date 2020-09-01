@@ -1,0 +1,49 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="#">Blog Edit</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/posts/add">Add a post <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/users/logout">Logout <span class="sr-only">(current)</span></a>
+                  </li>
+              </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron text-center" style="border-radius: 0;">
+    <div class="container">
+        <h1 class="text-dark display-4">Welcome To Your Blog Profile Page</h1>
+        <p>Edit, Add and Delete your Blog Posts from here.</p>
+    </div>
+</div>
+
+<div class="container mb-4 mt-4">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <th class="font-weight-normal text-center">Title</th>
+            <th class="font-weight-normal text-center">Date</th>
+            <th class="font-weight-normal text-center">Body</th>
+            <th></th>
+            <th></th>
+        </thead>
+        <tbody>
+            <% for(let i=0;i<(results.length);i++){ %>
+                <tr>
+                    <td class="text-center font-weight-light"><%=results[i].title%></td>
+                    <td class="text-center font-weight-light"><%=results[i].date%></td>
+                    <td class="text-center font-weight-light"><%=results[i].body%></td>
+                    <td class="text-center font-weight-light"><% let link = '/posts/update/'+results[i].id %><a href="<%= link %>" class="btn btn-outline-primary"><i class="fi-xnluxl-edit"></i></a></td>
+                    <td class="text-center font-weight-light"><% let link1 = '/posts/delete/'+results[i].id %><a href="<%= link1 %>" class="btn btn-outline-primary"><i class="fi-xnsuxl-trash-bin"></i></a></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>

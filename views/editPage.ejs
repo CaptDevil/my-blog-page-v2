@@ -1,0 +1,39 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="#">Blog Edit</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Go Back</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron text-center" style="border-radius: 0;">
+    <div class="container">
+        <h1 class="text-dark display-4">Update your post here</h1>
+    </div>
+</div>
+
+<div class="container mb-4">
+    <form class="form-group" action="/posts/update/<%=result.id%>" method="POST">
+        <input type="submit" value="Update" class="float-right btn btn-primary text-center">
+        <div class="clearfix"></div>
+        <div class="input-group input-group-lg mt-4">
+            <input class="form-control text-bold" type="text" name="title" value="<%=result.title%>" placeholder="Add Title">
+        </div>
+        <div class="input-group mb-4">
+            <textarea class="form-control bg-light text-dark mt-4" name="body" placeholder="Type your text here" style="height: 200px;"><%=result.body%></textarea>
+        </div>
+        
+    </form>
+</div>

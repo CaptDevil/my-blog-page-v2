@@ -1,0 +1,40 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="#">Blog Posts</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron text-center" style="border-radius: 0;">
+    <div class="container">
+        <h1 class="display-3">Welcome to My Blog Website</h1>
+        <p>This page contains all my weekly thoughts.</p>
+    </div>
+</div>
+
+<hr>
+
+<div class="container">
+    <% for(let i=0;i<(result.length);i++){ %>
+        <div class="card">
+            <div class="card-header bg-info">
+                <h3 class="card-title" style="margin: 0;"><%=result[i].title%></h3>
+            </div>
+            <div class="card-body">
+                <p class="font-weight-lighter"><%=result[i].date%></p>
+                <p><%=result[i].body%></p>
+            </div>
+        </div>
+        <hr>
+    <% } %>
+</div>

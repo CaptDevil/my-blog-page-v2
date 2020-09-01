@@ -1,0 +1,33 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="#">Blog Edit</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron text-center" style="border-radius: 0;">
+    <div class="container">
+        <h1 class="text-dark display-4">Login To Your Blog</h1>
+    </div>
+</div>
+
+<div class="container mb-4">
+    <form class="form-group" action="/users/login" method="POST">
+        <div class="input-group input-group-lg mt-4">
+            <input class="form-control text-bold" type="email" name="email" placeholder="Email"><input name="password" type="password" class="form-control text-bold" placeholder="Password">
+            <div class="input-group-append">
+                <input type="submit" value="Login" class="btn btn-outline-primary text-center mb-4">
+            </div>
+        </div>
+    </form>
+</div>
