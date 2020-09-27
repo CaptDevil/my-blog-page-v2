@@ -16,12 +16,12 @@ router.get('/add',ensureAuthenticated,(req,res)=>{
 })
 
 router.post('/add',(req,res)=>{
-    const { title,body } = req.body;
+    const { date,title,body } = req.body;
     Post.countDocuments((err,count)=>{
         if(err)
             throw err
 
-        let newPost = new Post({ id:count+1,title,body })
+        let newPost = new Post({ id:count+1,title,body,date })
         newPost.save((err,docs)=>{
             if(err)
                 throw err;
