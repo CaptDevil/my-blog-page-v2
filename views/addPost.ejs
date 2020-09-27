@@ -29,7 +29,8 @@
         <input type="submit" value="Post" class="float-right btn btn-primary text-center">
         <div class="clearfix"></div>
         <div class="input-group input-group-lg mt-4">
-            <input class="form-control text-bold" type="text" value="<%=Date.getHours()%>" name="date" placeholder="Add Title">
+            <%let d = new Date();%>
+            <input class="form-control text-bold" type="text" value="<%=d.getHours()%>" name="date" placeholder="Add Title">
         </div>
         <div class="input-group input-group-lg mt-4">
             <input class="form-control text-bold" type="text" name="title" placeholder="Add Title">
