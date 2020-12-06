@@ -29,8 +29,7 @@
         <input type="submit" value="Post" class="float-right btn btn-primary text-center">
         <div class="clearfix"></div>
         <div class="input-group input-group-lg mt-4">
-            <%let d = new Date();%>
-            <input class="form-control text-bold" type="text" value="<%=d.getHours()%>" name="date" placeholder="Add Title">
+            <input class="form-control text-bold" id="date-field" type="text" name="date" readonly>
         </div>
         <div class="input-group input-group-lg mt-4">
             <input class="form-control text-bold" type="text" name="title" placeholder="Add Title">
@@ -38,6 +37,12 @@
         <div class="input-group mb-4">
             <textarea class="form-control bg-light text-dark mt-4" name="body" placeholder="Type your text here" style="height: 200px;"></textarea>
         </div>
-        
     </form>
 </div>
+<script>
+    let dateField = document.getElementById('date-field');
+    setInterval(()=>{
+        let date = new Date();
+        dateField.value=date;
+    },1000);
+</script>
